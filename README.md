@@ -6,7 +6,8 @@
 ``` ```
 ``` ```
 
-#Functional representation# 
+Functional representation 
+
 Objects  | Messages
 ------------- | -------------
 Person  |
