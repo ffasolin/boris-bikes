@@ -1,4 +1,4 @@
 Objects:
 Person - use_bike
 Bike - is_bike_working
-Station - release_bike
+Docking station - release_bike
