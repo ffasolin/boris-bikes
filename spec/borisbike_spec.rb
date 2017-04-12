@@ -6,6 +6,17 @@ describe DockingStation do
   end
 
  it 'expects DockingStation to respond to release_bike method' do
-   expect(DockingStation.new).to respond_to(:release_bike)
+   docking_station = DockingStation.new
+   expect(docking_station).to respond_to(:release_bike)
   end
+
+ it 'expects DockingStation to get a bike' do
+   docking_station = DockingStation.new
+   expect(docking_station.release_bike).to be_an_instance_of(Bike)
+end
+
+it 'expects bike to be working' do
+  docking_station = DockingStation.new
+  expect(docking_station.release_bike.working?).to eq true
+ end
 end
