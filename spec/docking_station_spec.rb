@@ -15,7 +15,8 @@ describe DockingStation do
     expect((DockingStation.new).return_bike).to eq true
   end
 
-  it "shows docked bike" do
-    expect((Bike.new).docked?).to eq true
+  it "raises an error when no bikes are available" do
+    expect { DockingStation.new.release_bike }.to raise_error "No bikes available."
   end
+
 end
