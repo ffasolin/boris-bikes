@@ -1,4 +1,5 @@
 require 'docking_station'
+require 'bike'
 
 describe DockingStation do
 
@@ -7,13 +8,10 @@ describe DockingStation do
    expect(docking_station).to respond_to(:release_bike)
   end
 
- it 'expects DockingStation to release a bike' do
-   docking_station = DockingStation.new
-   expect(docking_station.release_bike).to be_an_instance_of(Bike)
-end
-
 it 'expects bike to be working' do
   docking_station = DockingStation.new
+  bike = Bike.new
+  docking_station.dock(bike)
   expect(docking_station.release_bike.working?).to eq true
  end
 
@@ -40,5 +38,21 @@ it 'expects bike to be working' do
 
  it 'returns an error when no bikes are available' do
    expect { !DockingStation.new.release_bike.is_an_instance_of Bike }.to raise_error("No bikes available.")
+ end
+
+ it 'returns error when no space to dock' do
+   bike = Bike.new
+   docking_station = DockingStation.new
+   docking_station.dock(bike)
+   expect {docking_station.dock(bike)}.to raise_error ("No space at this docking station.")
+ end
+ end
+
+describe '#release_bike' do
+  it 'releases a bike' do
+    docking_station = DockingStation.new
+    bike = Bike.new
+    docking_station.dock(bike)
+   expect(docking_station.release_bike).to eq(bike)
  end
 end
