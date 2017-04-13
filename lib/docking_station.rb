@@ -1,8 +1,9 @@
 class DockingStation
 
   def release_bike
+    #if
     Bike.new
-#@bike = 
+#@bike =
   end
   #attr_reader :bike
 
