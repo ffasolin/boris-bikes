@@ -1,10 +1,10 @@
 require 'bike'
 
 describe Bike do
-  it 'responds to working?' do
-    expect((Bike.new).working?).to eq true
+
+  it 'expects bike to be working' do
+    bike = Bike.new
+    expect(bike.working?).to eq true
   end
-  it "shows docked bike" do
-    expect((Bike.new).docked?).to eq true
-  end
+  
 end

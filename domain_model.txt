@@ -2,3 +2,13 @@ Objects:
 Person - use_bike
 Bike - is_bike_working
 Docking station - release_bike
+
+Error
+unitialized constant
+path /usr/bin/irb:12:in `<main>'
+line 1
+
+Member - return_bike
+Bike - docked?
+Member - decide_to_use
+Bike - docked?

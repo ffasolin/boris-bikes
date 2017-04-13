@@ -1,10 +1,5 @@
 class Bike
- def working?
-   true
- end
-
-def docked?
-  true
-end
-
+  def working?
+      true
+  end
 end
