@@ -37,4 +37,14 @@ describe DockingStation do
       expect(subject.capacity).to eq 25
     end
   end
+    describe ".working?" do
+      let(:bike) { double :bike }
+      it 'releases working bikes' do
+        allow(bike).to receive(:working?) {true}
+        subject.release_bike
+        subject.dock(bike)
+        released_bike = subject.release_bike
+        expect(released_bike).to be_working
+      end
+    end
 end

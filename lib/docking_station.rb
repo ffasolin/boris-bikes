@@ -22,11 +22,7 @@ class DockingStation
   def broken(bike)
     puts "Is bike broken? Y or N"
     answer = gets.chomp
-    if answer == 'N'
-      @bikes << bike
-    else
-      @broken_bikes << bike
-    end
+    answer == 'N' ? @bikes << bike : @broken_bikes << bike
   end
 
   def dock(bike)
