@@ -1,7 +1,9 @@
 require 'docking_station'
+require 'bike'
 
 describe DockingStation do
-   it "releases #{DockingStation::DEFAULT_CAPACITY} bikes per station" do
+   it "releases 20 bikes per station" do
+     subject
     expect { (DockingStation::DEFAULT_CAPACITY + 1).times { subject.release_bike } }.to raise_error("No bike available")
    end
 
@@ -33,6 +35,7 @@ describe DockingStation do
       expect{subject.dock(bike)}.to raise_error "Docking station is full"
     end
     it "when a docking station is created for 25 bikes" do
+      allow_any_instance_of(DockingStation).to receive(:capacity) { 25 }
       puts "Set station to store 25 bikes"
       expect(subject.capacity).to eq 25
     end

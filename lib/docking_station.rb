@@ -1,17 +1,13 @@
 class DockingStation
 
   DEFAULT_CAPACITY = 20
-  attr_reader :bikes, :capacity
+  attr_reader :bikes, :capacity, :broken_bikes
 
-  def initialize
-    puts "How many bikes would you like to store in this station?"
-    cap = gets.chomp
-    cap != "" ? @capacity = cap.to_i : @capacity = DEFAULT_CAPACITY
+  def initialize(capacity = DEFAULT_CAPACITY)
     @bikes = []
     @broken_bikes = []
-    @capacity.times do
-      @bikes << Bike.new
-    end
+    @capacity = capacity
+    @capacity.times { @bikes << Bike.new }
   end
 
   def release_bike
