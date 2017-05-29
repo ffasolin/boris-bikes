@@ -1,6 +1,8 @@
 class Garage # :nodoc:
-  def fix
-    @broken_bikes.each { |fixed| @bikes << fixed }
-    @broken_bikes.clear
+  attr_reader :fixed_bikes
+  def fix(broken_bikes)
+    @fixed_bikes = []
+    broken_bikes.each { |bike| @fixed_bikes << bike }
+    broken_bikes.clear
   end
 end

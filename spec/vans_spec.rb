@@ -1,8 +1,7 @@
 require 'vans'
-require 'garage'
 
 describe Vans do
-  it 'should take broken bikes on the van' do
+  it 'takes broken bikes on the van' do
     docking_station = DockingStation.new
     10.times { docking_station.release_bike }
     docking_station.dock(Bike.new)
