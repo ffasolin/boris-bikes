@@ -1,5 +1,6 @@
 class Vans # :nodoc:
-  def ships_to_garage
-    instance_variable_get(:@broken_bikes)
+  attr_reader :bikes_in_van
+  def ships_to_garage(broken_bikes)
+    @bikes_in_van = broken_bikes
   end
 end
