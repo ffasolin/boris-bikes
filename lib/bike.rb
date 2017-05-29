@@ -1,5 +1,5 @@
-class Bike
+class Bike # :nodoc:
   def working?
-      true
+    true
   end
 end
