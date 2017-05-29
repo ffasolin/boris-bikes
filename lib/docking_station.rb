@@ -28,10 +28,10 @@ class DockingStation # :nodoc:
   private
 
   def full?
-    (@bikes.count + @broken_bikes.count) == @capacity ? true : false
+    (@bikes.count + @broken_bikes.count) == @capacity
   end
 
   def empty?
-    @bikes.count.zero? ? true : false
+    @bikes.count.zero?
   end
 end
